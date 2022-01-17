@@ -1,0 +1,78 @@
+.home-hero {
+    position: relative;
+    height: calc(100vh - 140px); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+    color: $white;
+    background-color: $white;
+
+    .home-hero__video-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        pointer-events: none;
+        overflow: hidden;
+
+        &::before {
+            position: absolute;
+            content: '';
+            z-index: 3;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            width: 100vw;
+            height: 56.25vw;
+            min-height: 100vh;
+            min-width: 177.77vh; 
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @include max-mq($lg) {
+            height: calc(100vh - 100px);
+        }
+        @include max-mq($md) {
+            height: calc(100vh - 80px);
+        }
+    }
+
+    h1.home-hero__title {
+        font-size: clamp(30px, 6vw, 80px);
+
+        @include max-mq($mb) {
+            font-size: 30px;
+        }
+
+    }
+
+    h2 {
+        font-size: clamp(18px, 4vw, 32px);
+        font-weight: normal;
+
+        @include max-mq($mb) {
+            font-size: 18px;
+        }
+    }
+
+    @include max-mq($lg) {
+        height: calc(100vh - 100px);
+    }
+    @include max-mq($md) {
+        height: calc(100vh - 80px);
+    }
+
+}

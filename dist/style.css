@@ -400,7 +400,7 @@ html {
 
 .container {
   width: 100%;
-  max-width: 1170px;
+  max-width: 1410px;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -4370,6 +4370,114 @@ fieldset {
       -ms-flex: none;
           flex: none;
   max-width: none;
+}
+
+.home-hero {
+  position: relative;
+  height: -webkit-calc(100vh - 140px);
+  height: calc(100vh - 140px);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+  color: #ffffff;
+  background-color: #ffffff;
+}
+
+.home-hero .home-hero__video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.home-hero .home-hero__video-wrapper::before {
+  position: absolute;
+  content: '';
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.home-hero .home-hero__video-wrapper video {
+  width: 100vw;
+  height: 56.25vw;
+  min-height: 100vh;
+  min-width: 177.77vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media (max-width: 1199px) {
+  .home-hero .home-hero__video-wrapper {
+    height: -webkit-calc(100vh - 100px);
+    height: calc(100vh - 100px);
+  }
+}
+
+@media (max-width: 991px) {
+  .home-hero .home-hero__video-wrapper {
+    height: -webkit-calc(100vh - 80px);
+    height: calc(100vh - 80px);
+  }
+}
+
+.home-hero h1.home-hero__title {
+  font-size: clamp(30px, 6vw, 80px);
+}
+
+@media (max-width: 480px) {
+  .home-hero h1.home-hero__title {
+    font-size: 30px;
+  }
+}
+
+.home-hero h2 {
+  font-size: clamp(18px, 4vw, 32px);
+  font-weight: normal;
+}
+
+@media (max-width: 480px) {
+  .home-hero h2 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .home-hero {
+    height: -webkit-calc(100vh - 100px);
+    height: calc(100vh - 100px);
+  }
+}
+
+@media (max-width: 991px) {
+  .home-hero {
+    height: -webkit-calc(100vh - 80px);
+    height: calc(100vh - 80px);
+  }
 }
 
 .calendar {
