@@ -1,0 +1,9 @@
+{
+    "require-dev": {
+        "phpunit/phpunit": "^6"
+    },
+
+    "require": {
+        "facebook/graph-sdk": "^5.7"
+    }
+}
