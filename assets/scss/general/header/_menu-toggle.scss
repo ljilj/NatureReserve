@@ -1,7 +1,7 @@
 .menu-toggle-wrapper {
     align-items: center;
     display: flex;
-    margin-left: 20px;
+    margin-right: 20px;
     z-index: 1;
 
     @include min-mq($responsive-toggle-breakpoint + 1) {
@@ -14,6 +14,7 @@
         height: $toggle-menu-height;
         position: relative;
         width: $toggle-menu-width;
+        margin-left: 30px;
 
         .menu-opened & {
             background-color: $toggle-menu-bar-active-color;
@@ -61,6 +62,19 @@
                     transform: rotate(45deg);
                 }
             }
+        }
+    }
+}
+
+
+.rtl {
+    .menu-toggle-wrapper {
+        margin-right: 0;
+        margin-left: 20px;
+
+        .menu-toggle {
+            margin-left: 0;
+            margin-right: 30px
         }
     }
 }

@@ -1,23 +1,46 @@
-
 .logo-menu-wrapper{
+	padding: 0 15px;
+
+	.row {
+        height: 100px;
+
+        @include max-mq($sm) {
+            height: 80px;
+        }
+    }
 	
 	.site-branding{
-		margin-right: auto;
+		margin-right: 25px;
+		margin-left: 25px;
+
+		@include max-mq($sm) {
+            margin-left: 10px;
+            margin-right: 10px;
+
+            & img {
+                height: 45px;
+                width: 100px;
+            }
+        }
 	}
-	
-	&:after{
-		content: '';
-		background-color: rgba(0, 0, 0, 0.4);
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		opacity: 0;
-    	transition: .4s ease;
-		z-index: -1;
-		visibility: hidden;
-	}
+
+	&:after {
+        content: '';
+        background-color: rgba(0, 0, 0, 0.4);
+        position: fixed;
+        top: 100px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        transition: .4s ease;
+        z-index: -1;
+        visibility: hidden;
+
+        @include max-mq($sm) {
+            top: 80px;
+        }
+    }
 
 	.menu-opened &{
 		&:after{
@@ -28,10 +51,19 @@
 	}
 	  
 	.main-navigation {
-	
 		min-width: 270px;
 		top: 0;
-		margin: auto;
+		@include max-mq($lg) {
+            margin-top: 100px;
+        }
+
+        @include max-mq($sm) {
+           margin-top: 80px;
+        }
+
+        @media screen and (max-width: 430px) {
+            width: 100%;
+        }
 	
 		.admin-bar &{
 			top: 32px;
@@ -39,13 +71,15 @@
 
 		.arrow-toggle {
 			position: absolute;
-			right: -2px;
+			right: -10px;
 			top: 0;
 			cursor: pointer;
 			padding: 5px;
 			height: 100%;
 			display: flex;
 			align-items: center;
+			transition: $dur $ease;
+			z-index: -1;
 
 			@include max-mq($responsive-toggle-breakpoint) {
 				right: 10px;
@@ -57,7 +91,7 @@
 			position: fixed;
 			transition: .4s;
 			z-index: 999;
-			left: -100%;
+			left: -102%;
 			overflow: auto;
 			height: 100vh;
 			align-items: flex-start !important;
@@ -69,68 +103,126 @@
 		}
 	
 		.main-menu-container {
-			
-			ul {
-				margin: 0;
-				padding: 0;
-	
-				li {
-					display: block;
-					margin: 0;
-					position: relative;
-					color: $secondary-color;
-					transition: color 0.4s ease;
+            padding-left: 12px;
 
-					&.current-menu-item, &.current_page_parent{
-						color: $primary-color;
-					}
+            @include max-mq($lg) {
+                padding-left: 0;
+            }
 
-					&:hover{
-						color: $primary-color;
-					}
-	
-					@include min-mq($lg) {
-						display: inline-block;
-					}
+            ul {
+                margin: 0;
+                padding: 0;
 
-					@include max-mq($responsive-toggle-breakpoint) {
-						border-bottom: 1px solid $gray;
-						&:after{
-							content: none;
-						}
-					}
-	
-					a {
-						padding: 10px 20px;
-						display: block;
-						position: relative;
-						font-weight: 600;
-						color: inherit;
-						width: 100%;
+                li {
+                    display: block;
+                    margin: 0;
+                    position: relative;
+                    color: $primary-color;
+                    transition: color 0.4s ease;
 
-						@include max-mq($mac) {
-							padding: 15px;
-							font-size: $font-size-small;
-						}
-					}
+                    &.current-menu-item,
+                    &.current_page_parent,
+                    &.current-menu-ancestor {
+                        color: $primary-color;
+                        position: relative;
 
-					&.sub-menu-open{
-						@include max-mq($responsive-toggle-breakpoint) {
-							> a{
-								background-color: $primary-color;
-								color: $white;
-							}
-						}
-					}
-				}
-			}
+                        &::after {
+                            content: '';
+                            display: block;
+                            width: 100%;
+                            height: 3px;
+                            position: absolute;
+                            bottom: -1px;
+                            background-color: $secondary-color;
+                        }
+
+                        @include max-mq($lg) {
+
+                            &::after {
+                                width: 3px;
+                                height: 100%;
+                                right: 0;
+                                bottom: 0;
+                            }
+                        }
+                    }
+
+                    &.current-menu-ancestor {
+
+                        .current-menu-item {
+                            &::after {
+                                content: '';
+                                display: block;
+                                width: 3px;
+                                left: 0;
+                                height: 100%;
+                                position: absolute;
+                                bottom: 0px;
+                                background-color: $secondary-color;
+
+                                @include max-mq($lg) {
+                                    left: -10px;
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        color: $secondary-color;
+
+                        @include min-mq($lg) {
+                            .arrow-toggle {
+                                transform: rotate(180deg);
+                                top: -2px;
+                            }
+                        }
+                    }
+
+                    @include min-mq($lg + 1) {
+                        display: inline-block;
+                    }
+
+                    @include max-mq($responsive-toggle-breakpoint) {
+                        border-bottom: 1px solid $gray;
+
+                        &:after {
+                            content: none;
+                        }
+
+                        &:last-child {
+                            border-bottom: none;
+                        }
+                    }
+
+                    a {
+                        padding: 42px 13px;
+                        display: block;
+                        position: relative;
+                        color: inherit;
+                        width: 100%;
+
+                        @include max-mq($lg) {
+                            padding: 15px 30px 15px 15px;
+                            font-size: $font-size-small;
+                        }
+                    }
+
+                    &.sub-menu-open {
+                        @include max-mq($responsive-toggle-breakpoint) {
+                            >a {
+                                color: $secondary-color;
+                            }
+                        }
+                    }
+                }
+            }
 	
 			.sub-menu {
 	
-				@include max-mq($lg - 1) {
+				@include max-mq($lg) {
 					display: none;
 					margin: 0;
-					padding: 0 0 0 25px;
+					padding: 5px 30px 5px 20px;
 				}
 	
 				@include min-mq($lg) {
@@ -142,10 +234,10 @@
 					padding: 0;
 					position: absolute;
 					right: -50px;
-					text-align: center;
-					top: 99%;
+					text-align: left;
+					top: 100px;
 					visibility: hidden;
-					width: 200px;
+					width: 208px;
 					z-index: 10;
 				}
 	
@@ -154,10 +246,17 @@
 	
 					a {
 						padding: 10px 20px;
+						color: $white;
+						background-color: $green;
+                        transition: 0.3s ease-in-out;
 	
-						@include max-mq($lg - 1) {
+						@include max-mq($lg) {
 							padding: 10px 0;
 						}
+
+						&:hover {
+                            color: $secondary-color;
+                        }
 					}
 	
 					&:not(:last-child) {
@@ -187,25 +286,79 @@
 	
 			.menu-item-has-children {
 	
-				&:hover {
-	
-					>.sub-menu {
-						opacity: 1;
-						visibility: visible;
-					}
-				}
+				@include min-mq($lg) {
+                    margin-right: 13px;
+                    padding-right: 13px;
+                }
+
+                &:hover {
+                    cursor: pointer;
+
+                    >.sub-menu {
+                        opacity: 1;
+                        visibility: visible;
+                        background-color: $green;
+                    }
+                }
 			}
 
 			
 			@include max-mq($responsive-toggle-breakpoint) {
 				width: 100%;
-				margin-bottom: 40px;
 			}
 		}
 
 	}
+}
 
-	@include max-mq($sm) {
-		padding: 10px 15px;
-	}
+
+
+.rtl {
+    .logo-menu-wrapper {
+        .main-navigation {
+            .arrow-toggle {
+                right: inherit;
+                left: -10px;
+
+                @include max-mq($lg) {
+                    left: 10px;
+                }
+            }
+
+            .main-menu-container {
+                .sub-menu {
+                    text-align: right;
+                }
+
+                .menu-item-has-children {
+
+                    @include min-mq($lg) {
+                        margin-right: 0;
+                        margin-left: 13px;
+                        padding-right: 0;
+                        padding-left: 13px;
+                    }
+                }
+
+                ul {
+                    li {
+                        &.current-menu-ancestor {
+                            .current-menu-item {
+                                &::after {
+                                    right: -10px;
+                                }
+
+                                @include min-mq($lg) {
+                                    &::after {
+                                        left: initial;
+                                        right: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

@@ -1,5 +1,438 @@
-.site-branding {
-  
+.top-header {
+    position: relative;
+    height: 40px;
+
+    @include max-mq($lg) {
+        display: none;
+    }
+
+    span.top-header__left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background-color: $secondary-color;
+        z-index: -1;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -50px;
+            width: 100px;
+            height: 40px;
+            background: linear-gradient(to bottom left, $green 50%, $secondary-color 50%);
+        }
+    }
+
+    span.top-header__right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        background-color: $green;
+        z-index: -5;
+        height: 100%;
+    }
+
+    .top-header__wrap {
+        display: flex;
+        align-items: center;
+        color: $white;
+        justify-content: flex-end;
+        height: 40px;
+
+        a.top-header__link {
+            display: flex;
+            align-items: center;
+            height: 40px;
+            color: $white;
+        }
+    }
+
+    form.top-header__search {
+        display: flex;
+        align-items: center;
+        height: 40px;
+
+        label {
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 40px;
+        }
+
+        input[type='search'] {
+            background-color: transparent;
+            border: 0;
+            padding: 10px 15px;
+            transition: $dur $ease;
+            position: relative;
+            -webkit-appearance: textfield;
+
+            &::placeholder {
+                color: $white;
+            }
+
+            &:focus {
+                width: 250px;
+                background-color: transparent !important;
+                color: $white;
+                margin-right: 8px;
+                padding: 10px 2px;
+
+                &.focus-border {
+                    width: 100%;
+                    transition: $dur;
+                }
+
+            }
+
+        }
+
+        /* Safari Placeholder */
+        input::-webkit-input-placeholder,
+        input::-webkit-textfield-decoration-container {
+            text-align: right;
+        }
+
+        input:focus::-webkit-input-placeholder {
+            text-align: left;
+        }
+
+        input::-webkit-search-cancel-button {
+            display: none;
+        }
+
+        input::-moz-placeholder { /* Firefox 19+ */
+            text-align: right;
+        }
+
+        input:focus::-moz-placeholder { /* Firefox 19+ */
+            text-align: left;
+        }
+
+        input:-moz-placeholder { /* Firefox 18- */
+            text-align: right;
+        }
+
+        input:focus:-moz-placeholder { /* Firefox 18- */
+            text-align: left;
+        }
+
+        /* Change Autocomplete styles in Chrome*/
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus,
+        select:-webkit-autofill,
+        select:-webkit-autofill:hover,
+        select:-webkit-autofill:focus {
+        border: 0;
+        border-radius: 0;
+        -webkit-text-fill-color: $white;
+        -webkit-box-shadow: 0 0 0px 1000px $green inset;
+        box-shadow: 0 0 0px 1000px $green inset;
+        font-size: 16px;
+        }
+
+        .focus-border {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 91%;
+            height: 1px;
+            background-color: transparent;
+            transition: $dur;
+        }
+
+        .search-field:focus ~ .focus-border {
+            background-color: $white;
+        }
+
+        input:focus span.focus-border {
+            background-color: red !important;
+        }
+
+        span.search-icon::after {
+            content: '';
+            background-image: url('../assets/icons/search.svg');
+            right: 0;
+            top: 0;
+            height: 24px;
+            width: 24px;
+            margin-left: .5em;
+            width: 0;
+            overflow: visible;
+            display: inline-block;
+            line-height: 24px;
+            z-index: 1;
+            position: relative;
+            width: 20px;
+        }
+
+        .submit-button-search {
+            display: none;
+        }
+
+    }
+
+    .wpml-ls-legacy-list-horizontal {
+        padding: 0 20px;
+
+        ul {
+            padding: 0;
+            margin: 0 !important;
+            list-style-type: none;
+        }
+
+        a {
+            color: $white;
+        }
+
+        .wpml-ls-current-language {
+            display: none;
+        }
+
+        .wpml-ls-flag+span {
+            margin-right: 0.4em !important;
+        }
+
+        .wpml-ls-flag {
+            margin-right: 0.4em !important;
+        }
+    }
+
+} /* End Top header */
+
+/* Mobile top header */
+.top-header--mobile {
+    display: none;
+
+    .mobile_language_list ul {
+        list-style-type: none;
+        padding: 0;
+
+        li a {
+            display: flex;
+            font-size: 14px;
+            color: $primary-color;
+        }
+    }
+
+    .mobile-contact-page {
+        font-size: 14px;
+        color: $primary-color;
+    }
+
+    @include max-mq($lg) {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border-top: 1px solid $gray;
+        padding-top: 30px;
+
+        .switch-lang {
+            img {
+                margin-right: 10px;
+            }
+        }
+    }
 }
+
+.rtl {
+    .top-header--mobile {
+        @include max-mq($lg) {
+            .switch-lang {
+                img {
+                    margin-right: 0;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
+/* END Mobile top header */
+
+.featherlight.searchPopup .featherlight-content {
+    width: 90%;
+    vertical-align: top;
+    margin-top: 100px;
+
+    @include max-mq($sm) {
+        margin-top: 80px;
+    }
+}
+
+.mobile-search__wrap {
+    i.icon-search {
+        font-size: 22px;
+        color: $primary-color;
+    }
+}
+
+.wpml-ls-legacy-dropdown {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: auto !important;
+    margin: 0 15px;
+    background-color: $green;
+}
+
+.wpml-ls-legacy-dropdown a {
+    border: none;
+    background-color: $green !important;
+    color: $white !important;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: rgba($green, 0.8) !important;
+        color: $white !important;
+    }
+}
+
+.wpml-ls-legacy-dropdown .wpml-ls-sub-menu {
+    padding-top: 6px;
+}
+
+.rtl {
+    .wpml-ls-legacy-list-horizontal {
+        .wpml-ls-flag+span {
+            margin-right: 0;
+            margin-left: 0.4em !important;
+        }
+
+        .wpml-ls-flag {
+            margin-right: 0;
+            margin-left: 0.4em !important;
+        }
+    }
+
+    /* Search */
+    form.top-header__search {
+
+        input::-webkit-input-placeholder,
+        input::-webkit-textfield-decoration-container {
+            text-align: left;
+        }
+
+        input:focus::-webkit-input-placeholder {
+            text-align: right;
+        }
+
+        input::-moz-placeholder { /* Firefox 19+ */
+            text-align: left;
+        }
+
+        input:focus::-moz-placeholder { /* Firefox 19+ */
+            text-align: right;
+        }
+
+        input:-moz-placeholder { /* Firefox 18- */
+            text-align: left;
+        }
+
+        input:focus:-moz-placeholder { /* Firefox 18- */
+            text-align: right;
+        }
+
+        input[type='search'] {
+
+            &:focus {
+                margin-right: 0;
+                margin-left: 8px;
+            }
+        }
+
+        /* Change Autocomplete styles in Chrome*/
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus,
+        select:-webkit-autofill,
+        select:-webkit-autofill:hover,
+        select:-webkit-autofill:focus {
+        border: 0;
+        border-radius: 0;
+        -webkit-text-fill-color: $white;
+        -webkit-box-shadow: 0 0 0px 1000px $secondary-color inset !important;
+        box-shadow: 0 0 0px 10000px $secondary-color inset !important;
+        font-size: 16px;
+        }
+
+        @include max-mq($md) {
+            input:-webkit-autofill,
+            input:-webkit-autofill:hover,
+            input:-webkit-autofill:focus,
+            textarea:-webkit-autofill,
+            textarea:-webkit-autofill:hover,
+            textarea:-webkit-autofill:focus,
+            select:-webkit-autofill,
+            select:-webkit-autofill:hover,
+            select:-webkit-autofill:focus {
+            border: 1px solid $gray;
+            border-radius: 5px !important;
+            -webkit-text-fill-color: $black;
+            -webkit-box-shadow: 0 0 0px 1000px $white inset !important;
+            box-shadow: 0 0 0px 10000px $white inset !important;
+            font-size: 16px;
+            }
+        }
+
+        .focus-border {
+            right: 0;
+        }
+
+    }
+
+}
+
+.wpml-ls-legacy-dropdown .wpml-ls-sub-menu {
+    border-top: none;
+}
+
+/**
+* Header
+*/
+
+.header__wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Mobile Search popup */
+.mobile-search {
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 0;
+
+    .mobile-search__title {
+        font-size: 22px;
+        margin-bottom: 25px;
+        padding-right: 5%;
+    }
+
+    input[type="search"] {
+        padding: 15px 5px;
+        width: 95%;
+    }
+}
+
+.rtl .mobile-search {
+    .mobile-search__title {
+        text-align: right;
+    }
+}
+
+
 
 
