@@ -1,0 +1,307 @@
+.about-authority {
+    padding: 35px 0;
+    background-color: $white;
+
+    .about-authority__wrap {
+        display: flex;
+        align-items: center;
+    }
+
+    .about-authority__content {
+        padding: 25px 15px;
+
+        .about-authority__title {
+            margin: 0;
+        }
+
+        .about-authority__content-text {
+            margin: 20px 0;
+        }
+
+        .about-authority__button {
+            display: inline-block;
+            margin-left: auto;
+        }
+    }
+
+    .about-authority__image {
+        padding: 25px 15px;
+
+        .about-authority__map {
+            transition: $dur $ease;
+
+            .svgmap {
+                transition: $dur $ease;
+
+                // Regions 1
+                .r1 {
+                    transition: $dur $ease;
+
+                    &:hover {
+                        fill: rgba(215, 199, 179, 1) !important;
+                    }
+                }
+
+                .r3 {
+                    transition: $dur $ease;
+
+                    &:hover {
+                        fill: rgba(215, 199, 179, 1) !important;
+                    }
+                }
+
+                .r6 {
+                    transition: $dur $ease;
+
+                    &:hover {
+                        fill: rgba(215, 199, 179, 1) !important;
+                    }
+                }
+
+                .r9 {
+                    transition: $dur $ease;
+
+                    &:hover {
+                        fill: rgba(215, 199, 179, 1) !important;
+                    }
+                }
+
+                .r12 {
+                    transition: $dur $ease;
+
+                    &:hover {
+                        fill: rgba(215, 199, 179, 1) !important;
+                    }
+                }
+
+                // Regions 2
+                .r2 {
+                    transition: $dur $ease;
+
+                    &:hover {
+                        fill: rgba(215, 199, 179, 1) !important;
+                    }
+                }
+
+                .r4 {
+                    transition: $dur $ease;
+
+                    &:hover {
+                        fill: rgba(215, 199, 179, 1) !important;
+                    }
+                }
+
+                .r7 {
+                    transition: $dur $ease;
+
+                    &:hover {
+                        fill: rgba(215, 199, 179, 1) !important;
+                    }
+                }
+
+                .r11 {
+                    transition: $dur $ease;
+
+                    &:hover {
+                        fill: rgba(215, 199, 179, 1) !important;
+                    }
+                }
+
+                // Regions 3
+                .r5 {
+                    transition: $dur $ease;
+
+                    &:hover {
+                        fill: rgba(215, 199, 179, 1) !important;
+                    }
+                }
+
+                .r8 {
+                    transition: $dur $ease;
+
+                    &:hover {
+                        fill: rgba(215, 199, 179, 1) !important;
+                    }
+                }
+
+                // Regions 4
+                .r10 {
+                    transition: $dur $ease;
+
+                    &:hover {
+                        fill: rgba(215, 199, 179, 1) !important;
+                    }
+                }
+
+                .r13 {
+                    transition: $dur $ease;
+
+                    &:hover {
+                        fill: rgba(215, 199, 179, 1) !important;
+                    }
+                }
+            }
+        }
+        .about-authority__map-pin {
+            background-image: url('../assets/icons/pin.svg');
+        }
+
+        #pin-1 {
+            width: 12%;
+            height: 11%;
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            right: 36.8%;
+            top: 32.5%;
+            animation: 2s pulse infinite;
+            transition: $dur $ease;
+
+            &::before {
+                content: '';
+                background-image: url('../assets/icons/pin-king-khalid-logo.svg');
+                width: 40%;
+                height: 40%;
+                display: block;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin: 18% auto;
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                &::before {
+                    animation: scaleY 0.8s;
+                }
+            }
+        }
+
+        #pin-2 {
+            width: 12%;
+            height: 11%;
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            right: 28.6%;
+            top: 30.5%;
+            animation: pulse2 2s infinite;
+            transition: $dur $ease;
+
+            &::before {
+                content: '';
+                background-image: url('../assets/icons/pin-muhammad-logo.svg');
+                width: 40%;
+                height: 40%;
+                display: block;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin: 18% auto;
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                &::before {
+                    animation: scaleY 0.8s;
+                }
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+            }
+
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+            }
+
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+            }
+        }
+
+        @keyframes pulse2 {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+            }
+
+            50% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+            }
+
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+            }
+        }
+
+        @keyframes scaleY {
+            0% {
+                transform: scaleY(1);
+            }
+
+            50% {
+                transform: scaleY(0.2);
+            }
+
+            100% {
+                transform: scaleY(1);
+            }
+        }
+
+        &:hover {
+            .about-authority__map {
+                transform: rotateX(25deg), rotateZ(25deg), translate3d(-5px, 0, 0);
+                transform-style: preserve-3d;
+
+                .svgmap {
+                    filter: drop-shadow(-5px 25px 5px #222);
+                }
+            }
+        }
+
+        #pin-1 {
+            right: 37.3%;
+            top: 33.2%;
+            animation: none;
+        }
+
+        #pin-2 {
+            right: 30.3%;
+            top: 31.2%;
+            animation: none;
+        }
+    }
+}
+
+
+.rtl .about-authority {
+    .about-authority__image {
+
+        #pin-1 {
+            &::before {
+                margin-left: 0 !important;
+                margin-right: 30%;
+            }
+        }
+
+        #pin-2 {
+            &::before {
+                margin-left: 0 !important;
+                margin-right: 29%;
+            }
+        }
+
+    }
+}

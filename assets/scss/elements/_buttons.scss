@@ -11,3 +11,37 @@
 		background-color: $tertiary-color;
 	}
 }
+
+// About-authority button
+.about-authority__link {
+	padding: 20px;
+	background-color: $secondary-color;
+	color: $white;
+	border: 1px solid $secondary-color;
+	border-radius: 5px;
+	text-align: center;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 600;
+	transition: 0.3s ease-in-out;
+
+	&:hover {
+		background-color: $white;
+		color: $secondary-color;
+	}
+
+	i.icon-angle-left,
+	i.icon-angle-right {
+		display: flex;
+		margin: 0 5px;
+		&::before {
+            font-size: 20px;
+        }
+	}
+
+	i.icon-angle-left {
+        display: none;
+    }
+}
