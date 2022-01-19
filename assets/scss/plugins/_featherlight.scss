@@ -1,1 +1,5 @@
-// @import '../../../node_modules/featherlight/release/featherlight.min';
+@import '../../../node_modules/featherlight/release/featherlight.min';
+
+.featherlight-hidden {
+    display: none;
+}

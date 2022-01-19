@@ -1,7 +1,6 @@
 @font-face {
 	font-family: "font-icons";
-	src: url('../assets/fonts/font-icons/font-icons.woff2') format('woff2'), url('../assets/fonts/font-icons/font-icons.woff') format('woff'), url('../assets/fonts/font-icons/font-icons.ttf') format('truetype');
-	font-display: swap;
+	src: url('../assets/fonts/font-icons/font-icons.woff2') format('woff2'), url('../assets/fonts/font-icons/font-icons.woff') format('woff'), url('../assets/fonts/font-icons/font-icons.ttf') format('truetype');;
 }
 
 @mixin icon-styles {
@@ -14,6 +13,7 @@
 	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
 	text-decoration: none;
 	text-transform: none;
+    font-display: swap;
 }
 
 %icon {
@@ -23,17 +23,89 @@
 @function icon-char($filename) {
 	$char: "";
 
-	@if $filename == angle-down {
+	@if $filename == Instagram-01 {
 		$char: "\E001";
 	}
-	@if $filename == angle-left {
+	@if $filename == Linkedin-01 {
 		$char: "\E002";
 	}
-	@if $filename == angle-right {
+	@if $filename == Twitter-01 {
 		$char: "\E003";
 	}
-	@if $filename == angle-up {
+	@if $filename == Youtube-01 {
 		$char: "\E004";
+	}
+	@if $filename == angle-down {
+		$char: "\E005";
+	}
+	@if $filename == angle-left {
+		$char: "\E006";
+	}
+	@if $filename == angle-right {
+		$char: "\E007";
+	}
+	@if $filename == angle-up {
+		$char: "\E008";
+	}
+	@if $filename == arrow-left {
+		$char: "\E009";
+	}
+	@if $filename == btn-arrow-left {
+		$char: "\E00A";
+	}
+	@if $filename == email {
+		$char: "\E00B";
+	}
+	@if $filename == facebook {
+		$char: "\E00C";
+	}
+	@if $filename == google-plus-g {
+		$char: "\E00D";
+	}
+	@if $filename == imam-abdulaziz-bin-mohammed-royal-reserve-pin {
+		$char: "\E00E";
+	}
+	@if $filename == instagram {
+		$char: "\E00F";
+	}
+	@if $filename == king-khalid-royal-reserve-pin {
+		$char: "\E010";
+	}
+	@if $filename == linkedin {
+		$char: "\E011";
+	}
+	@if $filename == location-pin {
+		$char: "\E012";
+	}
+	@if $filename == media-gallery {
+		$char: "\E013";
+	}
+	@if $filename == phone {
+		$char: "\E014";
+	}
+	@if $filename == pin-king-khalid-logo {
+		$char: "\E015";
+	}
+	@if $filename == pin-muhammad-logo {
+		$char: "\E016";
+	}
+	@if $filename == pin-office-building {
+		$char: "\E017";
+	}
+	@if $filename == pin {
+		$char: "\E018";
+	}
+	@if $filename == pinterest {
+		$char: "\E019";
+	}
+	@if $filename == search {
+		$char: "\E01A";
+	}
+	@if $filename == twitter {
+		$char: "\E01B";
+	}
+	@if $filename == youtube {
+		$char: "\E01C";
 	}
 
 	@return $char;
@@ -50,6 +122,18 @@
 	}
 }
 
+.icon-Instagram-01 {
+	@include icon(Instagram-01);
+}
+.icon-Linkedin-01 {
+	@include icon(Linkedin-01);
+}
+.icon-Twitter-01 {
+	@include icon(Twitter-01);
+}
+.icon-Youtube-01 {
+	@include icon(Youtube-01);
+}
 .icon-angle-down {
 	@include icon(angle-down);
 }
@@ -62,4 +146,63 @@
 .icon-angle-up {
 	@include icon(angle-up);
 }
-
+.icon-arrow-left {
+	@include icon(arrow-left);
+}
+.icon-btn-arrow-left {
+	@include icon(btn-arrow-left);
+}
+.icon-email {
+	@include icon(email);
+}
+.icon-facebook {
+	@include icon(facebook);
+}
+.icon-google-plus-g {
+	@include icon(google-plus-g);
+}
+.icon-imam-abdulaziz-bin-mohammed-royal-reserve-pin {
+	@include icon(imam-abdulaziz-bin-mohammed-royal-reserve-pin);
+}
+.icon-instagram {
+	@include icon(instagram);
+}
+.icon-king-khalid-royal-reserve-pin {
+	@include icon(king-khalid-royal-reserve-pin);
+}
+.icon-linkedin {
+	@include icon(linkedin);
+}
+.icon-location-pin {
+	@include icon(location-pin);
+}
+.icon-media-gallery {
+	@include icon(media-gallery);
+}
+.icon-phone {
+	@include icon(phone);
+}
+.icon-pin-king-khalid-logo {
+	@include icon(pin-king-khalid-logo);
+}
+.icon-pin-muhammad-logo {
+	@include icon(pin-muhammad-logo);
+}
+.icon-pin-office-building {
+	@include icon(pin-office-building);
+}
+.icon-pin {
+	@include icon(pin);
+}
+.icon-pinterest {
+	@include icon(pinterest);
+}
+.icon-search {
+	@include icon(search);
+}
+.icon-twitter {
+	@include icon(twitter);
+}
+.icon-youtube {
+	@include icon(youtube);
+}

@@ -3147,10 +3147,9 @@ p {
 @font-face {
   font-family: "font-icons";
   src: url("../assets/fonts/font-icons/font-icons.woff2") format("woff2"), url("../assets/fonts/font-icons/font-icons.woff") format("woff"), url("../assets/fonts/font-icons/font-icons.ttf") format("truetype");
-  font-display: swap;
 }
 
-.icon-angle-down:before, .icon-angle-left:before, .icon-angle-right:before, .icon-angle-up:before {
+.icon-Instagram-01:before, .icon-Linkedin-01:before, .icon-Twitter-01:before, .icon-Youtube-01:before, .icon-angle-down:before, .icon-angle-left:before, .icon-angle-right:before, .icon-angle-up:before, .icon-arrow-left:before, .icon-btn-arrow-left:before, .icon-email:before, .icon-facebook:before, .icon-google-plus-g:before, .icon-imam-abdulaziz-bin-mohammed-royal-reserve-pin:before, .icon-instagram:before, .icon-king-khalid-royal-reserve-pin:before, .icon-linkedin:before, .icon-location-pin:before, .icon-media-gallery:before, .icon-phone:before, .icon-pin-king-khalid-logo:before, .icon-pin-muhammad-logo:before, .icon-pin-office-building:before, .icon-pin:before, .icon-pinterest:before, .icon-search:before, .icon-twitter:before, .icon-youtube:before {
   font-family: "font-icons";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -3159,22 +3158,119 @@ p {
   font-weight: normal;
   text-decoration: none;
   text-transform: none;
+  font-display: swap;
 }
 
-.icon-angle-down:before {
+.icon-Instagram-01:before {
   content: "";
 }
 
-.icon-angle-left:before {
+.icon-Linkedin-01:before {
   content: "";
 }
 
-.icon-angle-right:before {
+.icon-Twitter-01:before {
   content: "";
 }
 
-.icon-angle-up:before {
+.icon-Youtube-01:before {
   content: "";
+}
+
+.icon-angle-down:before {
+  content: "";
+}
+
+.icon-angle-left:before {
+  content: "";
+}
+
+.icon-angle-right:before {
+  content: "";
+}
+
+.icon-angle-up:before {
+  content: "";
+}
+
+.icon-arrow-left:before {
+  content: "";
+}
+
+.icon-btn-arrow-left:before {
+  content: "";
+}
+
+.icon-email:before {
+  content: "";
+}
+
+.icon-facebook:before {
+  content: "";
+}
+
+.icon-google-plus-g:before {
+  content: "";
+}
+
+.icon-imam-abdulaziz-bin-mohammed-royal-reserve-pin:before {
+  content: "";
+}
+
+.icon-instagram:before {
+  content: "";
+}
+
+.icon-king-khalid-royal-reserve-pin:before {
+  content: "";
+}
+
+.icon-linkedin:before {
+  content: "";
+}
+
+.icon-location-pin:before {
+  content: "";
+}
+
+.icon-media-gallery:before {
+  content: "";
+}
+
+.icon-phone:before {
+  content: "";
+}
+
+.icon-pin-king-khalid-logo:before {
+  content: "";
+}
+
+.icon-pin-muhammad-logo:before {
+  content: "";
+}
+
+.icon-pin-office-building:before {
+  content: "";
+}
+
+.icon-pin:before {
+  content: "";
+}
+
+.icon-pinterest:before {
+  content: "";
+}
+
+.icon-search:before {
+  content: "";
+}
+
+.icon-twitter:before {
+  content: "";
+}
+
+.icon-youtube:before {
+  content: "";
 }
 
 .top-header {
@@ -4210,6 +4306,51 @@ p {
   display: none;
 }
 
+.load-more__btn,
+.see-more-on-twitter {
+  background-color: #FB8C05;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #FB8C05;
+  text-align: center;
+  font-weight: 400;
+  color: #ffffff;
+  margin-top: 30px;
+  display: block;
+  max-width: 130px;
+  width: 100%;
+  margin: 0 auto;
+  -webkit-transition: 350ms ease;
+  -o-transition: 350ms ease;
+  transition: 350ms ease;
+}
+
+.load-more__btn:hover,
+.see-more-on-twitter:hover {
+  background-color: #ffffff;
+  border: 1px solid #FB8C05;
+  color: #FB8C05;
+}
+
+.see-more-on-instagram {
+  display: none;
+}
+
+.see-more-on-twitter {
+  max-width: 176px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .nav-links {
   text-align: center;
   width: 100%;
@@ -4374,6 +4515,128 @@ fieldset {
 .select2-container--default .select2-results__option[aria-selected=true],
 .select2-container--default .select2-results__option[data-selected=true] {
   background-color: gray;
+}
+
+/**
+ * Featherlight - ultra slim jQuery lightbox
+ * Version 1.7.14 - http://noelboss.github.io/featherlight/
+ *
+ * Copyright 2019, Noël Raoul Bossart (http://www.noelboss.com)
+ * MIT Licensed.
+**/
+html.with-featherlight {
+  overflow: hidden;
+}
+
+.featherlight {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2147483647;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  background: #333;
+  background: rgba(0, 0, 0, 0);
+}
+
+.featherlight:last-of-type {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.featherlight:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.featherlight .featherlight-content {
+  position: relative;
+  text-align: left;
+  vertical-align: middle;
+  display: inline-block;
+  overflow: auto;
+  padding: 25px 25px 0;
+  border-bottom: 25px solid transparent;
+  margin-left: 5%;
+  margin-right: 5%;
+  max-height: 95%;
+  background: #fff;
+  cursor: auto;
+  white-space: normal;
+}
+
+.featherlight .featherlight-inner {
+  display: block;
+}
+
+.featherlight link.featherlight-inner, .featherlight script.featherlight-inner, .featherlight style.featherlight-inner {
+  display: none;
+}
+
+.featherlight .featherlight-close-icon {
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  right: 0;
+  line-height: 25px;
+  width: 25px;
+  cursor: pointer;
+  text-align: center;
+  font-family: Arial,sans-serif;
+  background: #fff;
+  background: rgba(255, 255, 255, 0.3);
+  color: #000;
+  border: 0;
+  padding: 0;
+}
+
+.featherlight .featherlight-close-icon::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.featherlight .featherlight-image {
+  width: 100%;
+}
+
+.featherlight-iframe .featherlight-content {
+  border-bottom: 0;
+  padding: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.featherlight iframe {
+  border: 0;
+}
+
+.featherlight * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1024px) {
+  .featherlight .featherlight-content {
+    margin-left: 0;
+    margin-right: 0;
+    max-height: 98%;
+    padding: 10px 10px 0;
+    border-bottom: 10px solid transparent;
+  }
+}
+
+@media print {
+  html.with-featherlight > * > :not(.featherlight) {
+    display: none;
+  }
+}
+
+.featherlight-hidden {
+  display: none;
 }
 
 .frm_radio, .frm_checkbox {
@@ -5020,6 +5283,286 @@ fieldset {
   -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+section.media-center {
+  padding: 50px 0 100px;
+}
+
+section.media-center .media-center__nav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.media-center ul.media-center__nav--tabs {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  list-style-type: none;
+}
+
+section.media-center ul.media-center__nav--tabs li {
+  margin-right: 60px;
+}
+
+section.media-center ul.media-center__nav--tabs li a {
+  color: #6E6E74;
+  -webkit-transition: 350ms ease;
+  -o-transition: 350ms ease;
+  transition: 350ms ease;
+}
+
+section.media-center ul.media-center__nav--tabs li a:hover {
+  color: #FB8C05;
+}
+
+section.media-center ul.media-center__nav--tabs li a .icon-media-twitter::before {
+  font-size: 1px;
+}
+
+section.media-center ul.media-center__nav--tabs li.active a {
+  color: #FB8C05 !important;
+}
+
+section.media-center .photo-gallery {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+section.media-center .photo-gallery .photo-gallery__image {
+  position: relative;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+section.media-center .photo-gallery .photo-gallery__image img {
+  max-width: 450px;
+  width: 100%;
+  max-height: 300px;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+section.media-center .photo-gallery .photo-gallery__image .photo-gallery__instagram-link {
+  position: absolute;
+  top: 0px;
+  left: 15px;
+  font-size: 22px;
+  color: #ffffff;
+  text-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.75);
+  padding: 15px;
+  z-index: 2;
+}
+
+section.media-center .photo-gallery a {
+  cursor: pointer;
+}
+
+section.media-center .twitter-news {
+  padding: 0 15px;
+  width: 100%;
+}
+
+section.media-center .twitter-news .tweet__wrap {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 30px;
+  border: 1px solid #E2DDD9;
+  border-radius: 10px;
+}
+
+section.media-center .twitter-news .tweet__wrap .tweet__header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 7px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.media-center .twitter-news .tweet__wrap .tweet__header .tweet__image {
+  width: 48px;
+  height: 48px;
+}
+
+section.media-center .twitter-news .tweet__wrap .tweet__header .tweet__image img {
+  min-width: 48px;
+  width: 100%;
+  min-height: 48px;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 100%;
+}
+
+section.media-center .twitter-news .tweet__wrap .tweet__header .tweet__author-screen-name p {
+  color: #6E6E74;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+section.media-center .twitter-news .tweet__wrap .tweet__header .tweet__date {
+  font-size: 14px;
+}
+
+section.media-center .twitter-news .tweet__wrap .tweet__header .tweet__logo {
+  margin-left: auto;
+}
+
+section.media-center .twitter-news .tweet__wrap .tweet__header .tweet__logo i {
+  font-size: 22px;
+  color: #6E6E74;
+  -webkit-transition: 350ms ease;
+  -o-transition: 350ms ease;
+  transition: 350ms ease;
+}
+
+section.media-center .twitter-news .tweet__wrap .tweet__header .tweet__logo i:hover {
+  color: #1DA1F2;
+}
+
+section.media-center .twitter-news .tweet__wrap .tweet__author {
+  margin: 0 10px;
+  width: 100%;
+}
+
+section.media-center .twitter-news .tweet__wrap .tweet__author p {
+  color: #FB8C05;
+  font-size: 15px;
+  font-weight: 500;
+  -webkit-transition: 350ms ease;
+  -o-transition: 350ms ease;
+  transition: 350ms ease;
+}
+
+section.media-center .twitter-news .tweet__wrap .tweet__author a.tweet__author-link:hover .tweet__author-name p {
+  color: #000000;
+}
+
+section.media-center .twitter-news .tweet__wrap .tweet__content--text {
+  padding: 15px;
+}
+
+section.media-center .twitter-news .tweet__wrap .tweet__content--text a.read-tweet {
+  display: block;
+  color: #1DA1F2;
+}
+
+section.media-center .twitter-news .tweet__wrap .tweet__date {
+  margin: 0 15px;
+  border-bottom: 1px solid #E2DDD9;
+}
+
+section.media-center .twitter-news .tweet__wrap .tweet__date p {
+  font-size: 14px;
+  color: #6E6E74;
+}
+
+section.media-center .twitter-news .tweet__wrap .tweet__read a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 5px 15px 10px;
+  padding: 5px 0;
+  border: 1px solid #E2DDD9;
+  border-radius: 30px;
+  line-height: 16px;
+  color: #1DA1F2;
+  font-weight: 500;
+  font-size: 14px;
+  -webkit-transition: 350ms ease;
+  -o-transition: 350ms ease;
+  transition: 350ms ease;
+}
+
+section.media-center .twitter-news .tweet__wrap .tweet__read a:hover {
+  background-color: #cce6f7;
+}
+
+section.media-center .twitter-news .tweet__wrap:hover {
+  background-color: #f7f9f9;
+}
+
+@media (max-width: 767px) {
+  section.media-center .media-center__nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 50px;
+  }
+  section.media-center ul.media-center__nav--tabs {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  section.media-center .photo-gallery .photo-gallery__image img {
+    max-width: 575px;
+  }
+}
+
+@media (max-width: 480px) {
+  section.media-center ul.media-center__nav--tabs {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section.media-center ul.media-center__nav--tabs li {
+    margin-bottom: 30px;
+    margin-right: 0;
+  }
+}
+
+.video-box {
+  width: 100%;
+  max-height: 300px;
+  min-height: 300px;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.page2 {
+  display: none;
+}
+
+.hidden {
+  display: none;
 }
 
 .calendar {

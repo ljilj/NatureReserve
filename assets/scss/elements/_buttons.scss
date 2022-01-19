@@ -45,3 +45,38 @@
         display: none;
     }
 }
+
+// Media Center button
+.load-more__btn,
+.see-more-on-twitter {
+    background-color: $secondary-color;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid $secondary-color;
+    text-align: center;
+    font-weight: 400;
+    color: $white;
+    margin-top: 30px;
+    display: block;
+    max-width: 130px;
+    width: 100%;
+    margin: 0 auto;
+    transition: $dur $ease;
+
+    &:hover {
+        background-color: $white;
+        border: 1px solid $secondary-color;
+        color: $secondary-color;
+    }
+}
+
+.see-more-on-instagram {
+    display: none;
+}
+
+.see-more-on-twitter {
+    max-width: 176px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
