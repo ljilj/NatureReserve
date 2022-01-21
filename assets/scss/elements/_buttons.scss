@@ -80,3 +80,38 @@
     justify-content: space-around;
     align-items: center;
 }
+
+
+// Form button
+.frm_style_formidable-style.with_frm_style .frm_compact .frm_dropzone.dz-clickable .dz-message,
+.frm_style_formidable-style.with_frm_style input[type=submit],
+.frm_style_formidable-style.with_frm_style .frm_submit input[type=button],
+.frm_style_formidable-style.with_frm_style .frm_submit button,
+.frm_form_submit_style,
+.frm_style_formidable-style.with_frm_style .frm-edit-page-btn {
+    background: $secondary-color;
+    color: $white;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid $secondary-color;
+    border-radius: 5px;
+    padding: 12px 25px 12px;
+    transition: $dur $ease;
+
+    &:hover {
+        background-color: $white;
+        color: $secondary-color;
+        border-color: $secondary-color;
+    }
+}
+
+.rtl {
+    .frm_style_formidable-style.with_frm_style .frm_compact .frm_dropzone.dz-clickable .dz-message,
+    .frm_style_formidable-style.with_frm_style input[type=submit],
+    .frm_style_formidable-style.with_frm_style .frm_submit input[type=button],
+    .frm_style_formidable-style.with_frm_style .frm_submit button,
+    .frm_form_submit_style,
+    .frm_style_formidable-style.with_frm_style .frm-edit-page-btn {
+        font-family: "LBC" !important;
+    }
+}
