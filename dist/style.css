@@ -5565,6 +5565,244 @@ section.media-center .twitter-news .tweet__wrap:hover {
   display: none;
 }
 
+.our-locations {
+  position: relative;
+  padding: 100px 0;
+  background-color: #004834;
+  overflow: hidden;
+}
+
+.our-locations .our-locations__bg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+
+.our-locations .our-locations__section-title {
+  position: relative;
+  color: #ffffff;
+}
+
+.our-locations .our-locations__section-title h3 {
+  margin: 0 0 30px;
+}
+
+.our-locations .our-locations__wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.our-locations .our-locations__kk,
+.our-locations .our-locations__iabm,
+.our-locations .our-locations__office {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  padding: 20px;
+  background-color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.our-locations .our-locations__info--office,
+.our-locations .our-locations__info--location {
+  font-weight: 600;
+}
+
+.our-locations .our-locations__info--location {
+  color: #007540;
+  padding: 5px 0;
+}
+
+.our-locations .our-locations__info--address {
+  color: #6E6E74;
+}
+
+.google-map {
+  position: relative;
+  margin-top: 30px;
+  height: 600px;
+  height: 100%;
+}
+
+.google-map .google-map__image {
+  position: relative;
+  background-size: cover;
+}
+
+@media screen and (min-width: 993px) {
+  .google-map .google-map__image {
+    height: 600px;
+    background: url("../assets/images/map.jpg") no-repeat;
+    background-position: center left;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .google-map .google-map__image {
+    height: 400px;
+    background: url("../assets/images/map992.jpg") no-repeat;
+    background-position: right center;
+  }
+}
+
+@media screen and (max-width: 762px) {
+  .google-map .google-map__image {
+    height: 400px;
+    background: url("../assets/images/map762.jpg") no-repeat;
+    background-position: right center;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .google-map .google-map__image {
+    height: 300px;
+    background: url("../assets/images/map425.jpg") no-repeat;
+    background-position: right center;
+  }
+}
+
+.google-map .about-authority__map-pin {
+  background-image: url("../assets/icons/pin.svg");
+}
+
+.google-map #pin-1 {
+  width: 55px;
+  height: 65px;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 28.5%;
+  left: 800px;
+  -webkit-animation: pulse 2s infinite;
+          animation: pulse 2s infinite;
+  -webkit-transition: 350ms ease;
+  -o-transition: 350ms ease;
+  transition: 350ms ease;
+}
+
+.google-map #pin-1::before {
+  content: '';
+  background-image: url("../assets/icons/pin-king-khalid-logo.svg");
+  width: 50%;
+  height: 50%;
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 18.5% auto;
+}
+
+.google-map #pin-1:hover {
+  cursor: pointer;
+}
+
+.google-map #pin-1:hover .about-authority .about-authority__image .about-authority__map .svgmap .r8 {
+  fill: #d7c7b3 !important;
+}
+
+.google-map #pin-1:hover::before {
+  -webkit-animation: scaleY 0.8s;
+          animation: scaleY 0.8s;
+}
+
+@media screen and (max-width: 992px) {
+  .google-map #pin-1 {
+    left: initial;
+    top: 32%;
+    right: 237px;
+  }
+}
+
+@media screen and (max-width: 762px) {
+  .google-map #pin-1 {
+    left: initial;
+    top: 32%;
+    right: 124px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .google-map #pin-1 {
+    left: initial;
+    top: 43%;
+    right: 110px;
+  }
+}
+
+.google-map #pin-2 {
+  width: 55px;
+  height: 65px;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 23%;
+  left: 870px;
+  -webkit-animation: pulse2 2s infinite;
+          animation: pulse2 2s infinite;
+  -webkit-transition: 350ms ease;
+  -o-transition: 350ms ease;
+  transition: 350ms ease;
+}
+
+.google-map #pin-2::before {
+  content: '';
+  background-image: url("../assets/icons/pin-muhammad-logo.svg");
+  width: 50%;
+  height: 50%;
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 19.5% auto;
+}
+
+.google-map #pin-2:hover {
+  cursor: pointer;
+}
+
+.google-map #pin-2:hover::before {
+  -webkit-animation: scaleY 0.8s;
+          animation: scaleY 0.8s;
+}
+
+@media screen and (max-width: 992px) {
+  .google-map #pin-2 {
+    left: initial;
+    top: 23%;
+    right: 166px;
+  }
+}
+
+@media screen and (max-width: 762px) {
+  .google-map #pin-2 {
+    left: initial;
+    top: 23%;
+    right: 50px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .google-map #pin-2 {
+    left: initial;
+    top: 32%;
+    right: 36px;
+  }
+}
+
 .calendar {
   display: -webkit-box;
   display: -webkit-flex;
