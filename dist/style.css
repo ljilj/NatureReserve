@@ -6513,6 +6513,93 @@ section.media-center .twitter-news .tweet__wrap:hover {
   }
 }
 
+/*
+* Components
+*/
+.reserve-header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 60px 0 50px;
+  background-color: #ffffff;
+}
+
+@media (max-width: 991px) {
+  .reserve-header {
+    padding: 30px 0;
+  }
+}
+
+.reserve-header .container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 767px) {
+  .reserve-header .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: baseline;
+    -webkit-align-items: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+  }
+  .reserve-header .container img.reserve-header__logo {
+    max-height: 55px;
+    height: 100%;
+  }
+}
+
+.reserve-header .reserve-header__content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  .reserve-header .reserve-header__content {
+    padding-top: 30px;
+  }
+}
+
+.reserve-header .reserve-header__content .reserve-header__content--top-title {
+  font-size: clamp(14px, 4vw, 18px);
+  line-height: clamp(24px, 6vw, 36px);
+  font-style: italic;
+}
+
+.reserve-header .reserve-header__content .reserve-header__content--head-title {
+  font-size: clamp(24px, 6vw, 50px);
+  line-height: clamp(36px, 6vw, 50px);
+  margin: 20px 0 16px;
+}
+
+.reserve-header .reserve-header__content .reserve-header__content--subtitle {
+  font-size: clamp(24px, 6vw, 50px);
+  font-weight: normal;
+  margin: 0;
+}
+
 .calendar {
   display: -webkit-box;
   display: -webkit-flex;
